@@ -11,3 +11,18 @@ WheelDown::Send {WheelUp}
 #a::Send ^a
 #z::Send ^z
 #y::Send ^y
+
+; Window commands.
+#`::Send ^{Tab}
+#w::Send !{F4}
+LWin & Tab::SendInput, !{Tab}
+
+; Browser commands.
+#t::Send ^t
+#r::Send ^r
+#+]::Send ^{Tab}
+#+[::Send ^+{Tab}
+; (Cmd+W should only close tab on IE)
+#IfWinActive ahk_class IEFrame
+#w::Send ^w
+#IfWinActive
