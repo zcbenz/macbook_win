@@ -1,9 +1,13 @@
 #MaxHotkeysPerInterval 2000
 
-WheelUp::
-Send {WheelDown}
-Return
+; Reverse mouse scroll direction.
+WheelUp::Send {WheelDown}
+WheelDown::Send {WheelUp}
 
-WheelDown::
-Send {WheelUp}
-Return
+; Edit commands.
+#c::Send ^{Insert} ; Right-hand key for cygwin compatible.
+#v::Send +{Insert} ; Right-hand key for cygwin compatible.
+#x::Send ^x
+#a::Send ^a
+#z::Send ^z
+#y::Send ^y
