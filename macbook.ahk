@@ -20,6 +20,7 @@ LWin & Tab::SendInput, !{Tab}
 ; Browser commands.
 #t::Send ^t
 #r::Send ^r
+#l::Send ^l
 #+]::Send ^{Tab}
 #+[::Send ^+{Tab}
 ; (Cmd+W should only close tab on IE)
