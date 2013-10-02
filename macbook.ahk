@@ -24,7 +24,9 @@ LWin & Tab::SendInput, !{Tab}
 #f::Send ^f
 #+]::Send ^{Tab}
 #+[::Send ^+{Tab}
-; (Cmd+W should only close tab on IE)
+; (Cmd+W should only close tab on IE and Chrome)
 #IfWinActive ahk_class IEFrame
+#w::Send ^w
+#IfWinActive ahk_class Chrome_WidgetWin_1
 #w::Send ^w
 #IfWinActive
