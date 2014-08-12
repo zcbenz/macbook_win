@@ -3,6 +3,8 @@
 ; Reverse mouse scroll direction.
 WheelUp::Send {WheelDown}
 WheelDown::Send {WheelUp}
+WheelLeft::Send {WheelRight}
+WheelRight::Send {WheelLeft}
 
 ; Edit commands.
 #c::Send ^{Insert} ; Right-hand key for cygwin compatible.
