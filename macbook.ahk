@@ -14,11 +14,6 @@ WheelRight::Send {WheelLeft}
 #z::Send ^z
 #y::Send ^y
 
-; Window commands.
-#`::Send ^{Tab}
-#w::Send !{F4}
-LWin & Tab::SendInput, !{Tab}
-
 ; Browser commands.
 #t::Send ^t
 #r::Send ^r
@@ -32,3 +27,11 @@ LWin & Tab::SendInput, !{Tab}
 #IfWinActive ahk_class Chrome_WidgetWin_1
 #w::Send ^w
 #IfWinActive
+
+^`::	; Next Window
+  WinGetClass, CurrentActive, A
+  WinGet, Instances, Count, ahk_class %CurrentActive%
+  If Instances > 1
+    WinSet, Bottom,, A
+  WinActivate, ahk_class %CurrentActive%
+return
